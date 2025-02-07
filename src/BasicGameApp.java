@@ -46,7 +46,7 @@ public class BasicGameApp implements Runnable {
 
 	//Declare the objects used in the program
 	//These are things that are made up of more than one variable type
-	private Legends astro;
+	private Legends mrSmith;
 	private Legends Ian;
 	private Legends Trophy;
 
@@ -75,7 +75,7 @@ public class BasicGameApp implements Runnable {
 		Ianbabepic = Toolkit.getDefaultToolkit().getImage("IanGB.png");
 		TrophyPic = Toolkit.getDefaultToolkit().getImage("RealTrophy.png");//load the picture
 		backgroundPic = Toolkit.getDefaultToolkit().getImage("Laxfield.jpg");
-		astro = new Legends(200,500);
+		mrSmith = new Legends(200,500);
 		Ian = new Legends(200,600);
 		Trophy = new Legends(10,60);
 
@@ -106,7 +106,7 @@ public class BasicGameApp implements Runnable {
 	{
 
 		//calls the move( ) code in the objects
-		astro.bounce();
+		mrSmith.bounce();
 		Ian.wrap();
 		Trophy.bounce();
 		collisions();
@@ -114,25 +114,46 @@ public class BasicGameApp implements Runnable {
 	}
 
 	public void collisions() {
-		if (astro.rec.intersects(Ian.rec) && astro.isCrashing == false && astro.isAlive && Ian.isAlive) {
-			System.out.println("explosion!!!!");
-			astro.dx = -astro.dx;
-			astro.dy = -astro.dy;
-			astro.isAlive = false;
-			Ian.dx = -astro.dx;
-			Ian.dy = -astro.dy;
-			Ian.width = Ian.width +10;
-			Ian.height = Ian.height +10;
+		if (Trophy.rec.intersects(Ian.rec) && mrSmith.isCrashing == false && mrSmith.isAlive && Ian.isAlive) {
+			System.out.println("Champion!!!!");
+			mrSmith.dx = -mrSmith.dx;
+			mrSmith.dy = -mrSmith.dy;
+			mrSmith.isAlive = false;
+			Ian.dx = -mrSmith.dx;
+			Ian.dy = -mrSmith.dy;
+			Ian.width = Ian.width +100;
+			Ian.height = Ian.height +100;
 			Trophy.width = Trophy.width +5;
 			Trophy.height = Trophy.height +5;
-			astro.dx = astro.dx +5;
-			astro.dy = astro.dy +5;
-			astro.isCrashing = true;
+			mrSmith.dx = mrSmith.dx +5;
+			mrSmith.dy = mrSmith.dy +5;
+			mrSmith.isCrashing = true;
 
 
 		}
-		if(!astro.rec.intersects(Ian.rec)){
-			astro.isCrashing = false;
+		if(!mrSmith.rec.intersects(Ian.rec)){
+			mrSmith.isCrashing = false;
+
+		}
+		if (Trophy.rec.intersects(Ian.rec) && Trophy.isCrashing == false && Trophy.isAlive && Ian.isAlive) {
+			System.out.println("explosion!!!!");
+			Trophy.dx = -Trophy.dx;
+			Trophy.dy = -Trophy.dy;
+			Trophy.isAlive = false;
+			Ian.dx = -Trophy.dx;
+			Ian.dy = -Trophy.dy;
+			Ian.width = Ian.width +2;
+			Ian.height = Ian.height +2;
+			Trophy.width = Trophy.width +200;
+			Trophy.height = Trophy.height +200;
+			Trophy.dx = Trophy.dx +1;
+			Trophy.dy = Trophy.dy +1;
+			Trophy.isCrashing = true;
+
+
+		}
+		if(!Trophy.rec.intersects(Ian.rec)){
+			Trophy.isCrashing = false;
 
 		}
 	}
@@ -183,9 +204,9 @@ public class BasicGameApp implements Runnable {
 		g.clearRect(0, 0, WIDTH, HEIGHT);
 		g.drawImage(backgroundPic,  0,  0,WIDTH, HEIGHT, null);
 
-		//draw the image of the astronaut
-		if (astro.isAlive == true) {
-			g.drawImage(DadPIC, astro.xpos, astro.ypos, astro.width, astro.height, null);
+		//draw the image of the mrSmithnaut
+		if (mrSmith.isAlive == true) {
+			g.drawImage(DadPIC, mrSmith.xpos, mrSmith.ypos, mrSmith.width, mrSmith.height, null);
 		}
 		g.drawImage(DadPIC, Ian.xpos, Ian.ypos, Ian.width, Ian.height, null);
 		g.drawImage(Ianbabepic, Ian.xpos, Ian.ypos, Ian.width, Ian.height, null);
