@@ -149,6 +149,7 @@ public class BasicGameApp implements Runnable {
 			Trophy.dx = Trophy.dx +1;
 			Trophy.dy = Trophy.dy +1;
 			Trophy.isCrashing = true;
+			//
 
 
 		}
