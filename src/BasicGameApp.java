@@ -128,7 +128,7 @@ public class BasicGameApp implements Runnable {
 			mrSmith.dx = mrSmith.dx +5;
 			mrSmith.dy = mrSmith.dy +5;
 			mrSmith.isCrashing = true;
-			//This is setting up the crash between Ian zznd Mr.Smith
+			//This is setting up the crash between Ian and Mr.Smith
 
 		}
 		if(!mrSmith.rec.intersects(Ian.rec)){
@@ -188,8 +188,7 @@ public class BasicGameApp implements Runnable {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  //makes the frame close and exit nicely
 		frame.pack();  //adjusts the frame and its contents so the sizes are at their default or larger
 		frame.setResizable(false);   //makes it so the frame cannot be resized
-		frame.setVisible(true);      //IMPORTANT!!!  if the frame is not set to visible it will not appear on the screen!
-
+		frame.setVisible(true);
 		// sets up things so the screen displays images nicely.
 		canvas.createBufferStrategy(2);
 		bufferStrategy = canvas.getBufferStrategy();
