@@ -128,7 +128,7 @@ public class BasicGameApp implements Runnable {
 			mrSmith.dx = mrSmith.dx +5;
 			mrSmith.dy = mrSmith.dy +5;
 			mrSmith.isCrashing = true;
-
+			//This is setting up the crash between Ian zznd Mr.Smith
 
 		}
 		if(!mrSmith.rec.intersects(Ian.rec)){
@@ -149,7 +149,7 @@ public class BasicGameApp implements Runnable {
 			Trophy.dx = Trophy.dx +1;
 			Trophy.dy = Trophy.dy +1;
 			Trophy.isCrashing = true;
-			//
+			//This is setting up the crash between Ian and the Trophy
 
 
 		}
